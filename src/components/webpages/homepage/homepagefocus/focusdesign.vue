@@ -3,7 +3,7 @@
         <div class="focus">
             <div class="focus-container">
                 <div class="focus-content flex flex-row justify-center items-center">
-                    <img src="/images/focus.png" alt="focus">
+                    <img src="/images/focus.png" alt="focus" loading="lazy">
                     <div class="focus-text" ref="focusText">
                         <h1 class="font-bold slide-left">Our Focus</h1>
                         <p class="slide-left">

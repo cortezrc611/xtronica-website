@@ -17,7 +17,7 @@ import servicesdesign from './homepageservices/servicesdesign.vue';
              <h6 class="font-light">Technical Support | IT infrastructure | Project Management | Consulting | Integration | Customer and Business Solutions</h6>
              <button><a href="/">Contact Us</a></button>
             </div>
-             <img src="/images/xtronica.png">
+             <img src="/images/xtronica.png" loading="lazy">
             </div>
         </div>
         </div>
