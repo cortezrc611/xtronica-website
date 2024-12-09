@@ -1,4 +1,3 @@
-
 <template>
     <div>
         <focusskeleton v-if="!isLoaded" />
@@ -7,14 +6,14 @@
 </template>
 
 <script>
-import focusskeleton  from "./focusskeleton.vue";
+import focusskeleton from "./focusskeleton.vue";
 import focusdesign from "./focusdesign.vue";
 
 export default {
-    name: "HomepageWithFallback",
+    name: "FocusWithFallback",
     components: {
         focusskeleton,
-        focusdesign ,
+        focusdesign,
     },
     data() {
         return {
@@ -22,17 +21,25 @@ export default {
         };
     },
     async created() {
-        // Simulate async loading with a delay
-        await this.loadNavbar();
+        await this.loadContent();
     },
     methods: {
-        async loadNavbar() {
-            // Simulated async operation
+        async loadContent() {
+            try {
+                const simulatedDelay = await this.simulateRealTimeDelay();
+                console.log("Simulated delay completed:", simulatedDelay);
+                this.isLoaded = true;
+            } catch (error) {
+                console.error("Error during content loading:", error);
+            }
+        },
+        simulateRealTimeDelay() {
             return new Promise((resolve) => {
+                // Simulate a real-time delay; adjust based on deployment needs
+                const delay = Math.random() * (3000 - 1500) + 1500; // Random delay between 1.5s and 3s
                 setTimeout(() => {
-                    this.isLoaded = true;
-                    resolve();
-                }, 2000); // 2 seconds delay
+                    resolve(`Delay of ${delay.toFixed(0)}ms`);
+                }, delay);
             });
         },
     },
