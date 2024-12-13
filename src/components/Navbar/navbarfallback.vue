@@ -1,20 +1,25 @@
-<!-- NavbarWithFallback.vue -->
 <template>
     <div>
-        <Navbarskeleton v-if="!isLoaded" />
-        <Navbardesign v-else />
+        <homepageskeleton v-if="!isLoaded" />
+        <services v-if="!isLoaded" />
+        <focus v-if="!isLoaded" />
+        <homepagedesign v-else />
     </div>
 </template>
 
 <script>
-import Navbarskeleton from "./navbarskeleton.vue";
-import Navbardesign from "./navbardesign.vue";
+import homepageskeleton from "./homepageskeleton.vue";
+import homepagedesign from "./homepagedesign.vue";
+import services from './homepageservices/services.vue';
+import focus from "./homepagefocus/focus.vue";
 
 export default {
-    name: "NavbarWithFallback",
+    name: "HomepageWithFallback",
     components: {
-        Navbarskeleton,
-        Navbardesign ,
+        homepageskeleton,
+        homepagedesign,
+        services,
+        focus,
     },
     data() {
         return {
@@ -22,17 +27,25 @@ export default {
         };
     },
     async created() {
-        // Simulate async loading with a delay
-        await this.loadNavbar();
+        await this.loadContent();
     },
     methods: {
-        async loadNavbar() {
-            // Simulated async operation
+        async loadContent() {
+            try {
+                const simulatedNetworkDelay = await this.simulateRealTimeDelay();
+                console.log("Simulated delay completed:", simulatedNetworkDelay);
+                this.isLoaded = true;
+            } catch (error) {
+                console.error("Error during content loading:", error);
+            }
+        },
+        simulateRealTimeDelay() {
             return new Promise((resolve) => {
+                // Simulate a real-time delay; adjust based on deployment needs
+                const delay = Math.random() * (3000 - 1500) + 1500; // Random delay between 1.5s and 3s
                 setTimeout(() => {
-                    this.isLoaded = true;
-                    resolve();
-                }, 2000); // 2 seconds delay
+                    resolve(`Delay of ${delay.toFixed(0)}ms`);
+                }, delay);
             });
         },
     },

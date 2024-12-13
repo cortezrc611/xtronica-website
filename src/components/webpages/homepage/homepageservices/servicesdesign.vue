@@ -12,7 +12,7 @@
               :key="index"
               ref="serviceTiles"
             >
-              <img :src="`/images/${service.image}`" :alt="service.title" class="services-image" loading="lazy"/>
+              <img :src="`/images/${service.image}`" :alt="service.title" class="services-image" />
               <div class="services-text">
                 <h2 class="font-bold">{{ service.title }}</h2>
                 <p>{{ service.description }}</p>
@@ -22,7 +22,7 @@
               v-if="showLastPart"
               class="service-tiles-lastpart flex flex-row justify-center items-center"
             >
-              <img src="/images/System Integration.png" loading="lazy"/>
+              <img src="/images/System Integration.png" />
               <div class="services-text-lastpart">
                 <h2 class="font-bold">System Integration</h2>
                 <p>
@@ -36,7 +36,7 @@
             <div
               class="service-tiles-lastpart-mobile flex flex-row justify-center items-center"
             >
-              <img src="/images/System Integration.png" loading="lazy"/>
+              <img src="/images/System Integration.png" />
               <div class="services-text-lastpart">
                 <h2 class="font-bold">System Integration</h2>
                 <p>

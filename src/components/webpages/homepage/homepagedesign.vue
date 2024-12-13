@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import Focusdesign from './homepagefocus/focusdesign.vue';
 import servicesdesign from './homepageservices/servicesdesign.vue';
+import Technicalsupportdesign from './technicalsupport/technicalsupportdesign.vue';
+
 
 
 </script>
@@ -17,13 +19,14 @@ import servicesdesign from './homepageservices/servicesdesign.vue';
              <h6 class="font-light">Technical Support | IT infrastructure | Project Management | Consulting | Integration | Customer and Business Solutions</h6>
              <button><a href="/">Contact Us</a></button>
             </div>
-             <img src="/images/xtronica.png" loading="lazy">
+             <img src="/images/xtronica.png">
             </div>
         </div>
         </div>
     </section>
     <servicesdesign />
     <Focusdesign />
+    <Technicalsupportdesign />
 </template>
 
 <style scoped>
